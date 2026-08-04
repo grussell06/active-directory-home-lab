@@ -52,12 +52,55 @@ Created the following Organizational Units:
 
 - IT
 - HR
+- Finance
+- Marketing
+- Sales
+- Servers
+- Service Accounts
+- Workstations
+
+![Organizational Units](Images/AD-Groups.png)
 
 Created user accouts:
 - Jenny Smith (jsmith)
 - Terry Roberts (troberts)
+- Elisabeth Lowe 
+- Umar Peterson
+- Darius Nash
+- Marilyn Sutton
+- Vinnie Nelson
+- Phillip Cole
+- Zaviyan Cobb
+- Jean Riley
+- Kelsie Kirk
+- Elle Vang
+- Maison Craig
 
-*Put images of users here*
+![IT Users](Images/AD-IT-Users.png)
+
+Created the following Security Groups:
+
+- Finance_Users
+- HR_Users
+- IT_Admins
+- IT_Users
+- Marketing_Users
+- Sales_Users
+
+![Security Groups](Images/Group-OUs.png)
+
+![Members in Group](Images/Users-In-Groups.png)
+
+Desktop Wallpaper GPO
+
+Configured a GPO to manage wallpapers on desktops
+
+![GPO in Group Policy Management](Images/GPO-In-Group-Policy-Management.png)
+
+![Desktop Wallpaper Policy](Images/Desktop-Wallpaper-policy.png)
+
+![New Wallpaper](Images/new-wallpaper.png)
+
 
 ---
 
