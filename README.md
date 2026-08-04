@@ -3,7 +3,16 @@
 ## Overview
 This project documents the creation of a Windows enterprise lab using Active Directory Domain Services. The environment simulates a small business network with centralized authentication, Group Policy management, shared resources, and Windows security monitoring.
 
-## Technologies
+## Technologies Used
+- Windows Server 2022
+- Windows 10
+- Active Directory Domain Services
+- Kali Linux
+- Splunk Enterprise
+- Splunk Universal Forwarder
+- Sysmon
+- Atomic Red Team
+- VirtualBox
 
 
 
@@ -38,6 +47,19 @@ Configure the Windows Server as a domain controller.
 
 <img width="1023" height="774" alt="AD Users and Computers" src="https://github.com/user-attachments/assets/fc4b96ab-df81-42e5-844c-c9bf971f2b5d" />
 
+### Active Directory
+Created the following Organizational Units: 
+
+- IT
+- HR
+
+Created user accouts:
+- Jenny Smith (jsmith)
+- Terry Roberts (troberts)
+
+*Put images of users here*
+
+---
 
 # Attack Simulations
 
