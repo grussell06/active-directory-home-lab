@@ -37,3 +37,100 @@ Configure the Windows Server as a domain controller.
 <img width="744" height="117" alt="AD DS Installed" src="https://github.com/user-attachments/assets/8ec9b637-2033-4b0b-ac8d-df45646f872f" />
 
 <img width="1023" height="774" alt="AD Users and Computers" src="https://github.com/user-attachments/assets/fc4b96ab-df81-42e5-844c-c9bf971f2b5d" />
+
+
+# Attack Simulations
+
+## Attack Simulation #1 - Local User Account Creation
+
+### Objective
+Simulate an attacker creating a local user account to establish persistence on a Windows system.
+
+### Tool
+- Atomic Red Team
+
+### MITRE ATT&CK
+- **T1136.001 - Create Account: Local Account**
+
+### Description
+Executed the Atomic Red Team test to create a local Windows user account. This activity generates Windows Security logs that can be collected and analyzed in Splunk.
+
+### Detection
+**Relevant Windows Event IDs**
+- Event ID 4720 – User account created
+- Event ID 4732 – User added to a local security group (if applicable)
+
+### Splunk Search
+```spl
+index=endpoint EventCode=4720
+```
+
+### Evidence
+
+![Atomic Red Team - Local User Creation](images/atomic-local-user.png)
+
+![Splunk Detection - Event ID 4720](<img width="625" height="50" alt="Splunk Search" src="https://github.com/user-attachments/assets/e351ac71-7b3f-4597-922b-8f1e5ee1b36b" />
+)
+
+![Splunk Event Results](<img width="920" height="515" alt="Splunk Results" src="https://github.com/user-attachments/assets/8fedcb94-21f0-4056-aa88-0d5304618f7e" />)
+
+
+### Outcome
+Successfully generated Windows security events that were ingested into Splunk and identified using Event ID 4720.
+
+---
+
+## Attack Simulation #2 - PowerShell Execution
+
+### Objective
+Simulate malicious PowerShell execution to generate endpoint telemetry for detection and analysis.
+
+### Tool
+- Atomic Red Team
+
+### MITRE ATT&CK
+- **T1059.001 - PowerShell**
+
+### Description
+Executed an Atomic Red Team PowerShell test to simulate adversary behavior. The execution generated endpoint telemetry collected by Sysmon and forwarded to Splunk.
+
+### Detection
+Potential logs to investigate:
+- Sysmon Event ID 1 – Process Creation
+- PowerShell Event ID 4104 – Script Block Logging (if enabled)
+- Windows Security Logs (depending on the test executed)
+
+### Splunk Search
+
+```spl
+index=endpoint powershell
+```
+
+or
+
+```spl
+index=endpoint EventCode=1
+```
+
+### Evidence
+
+![Atomic Red Team - PowerShell](images/atomic-powershell.png)
+
+![Splunk Detection - PowerShell](images/splunk-powershell.png)
+
+### Outcome
+Successfully generated PowerShell execution telemetry and verified that the events were searchable within Splunk.
+
+---
+
+## Skills Demonstrated
+
+- Active Directory Administration
+- Windows Event Logging
+- Sysmon Configuration
+- Splunk Log Analysis
+- Endpoint Detection
+- Atomic Red Team
+- MITRE ATT&CK Mapping
+- Threat Detection
+- Security Event Investigation
