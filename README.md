@@ -69,10 +69,10 @@ index=endpoint EventCode=4720
 
 ![Atomic Red Team - Local User Creation]
 
-![Splunk Detection - Event ID 4720](images/Splunk%20Search.png)
+![Splunk Detection - Event ID 4720](images/Splunk-Search.png)
 
 
-![Splunk Event Results](images/Splunk%20Results.png)
+![Splunk Event Results](images/Splunk-Results.png)
 
 
 ### Outcome
