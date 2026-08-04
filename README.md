@@ -67,12 +67,12 @@ index=endpoint EventCode=4720
 
 ### Evidence
 
-![Atomic Red Team - Local User Creation](images/atomic-local-user.png)
+![Atomic Red Team - Local User Creation]
 
-![Splunk Detection - Event ID 4720](<img width="625" height="50" alt="Splunk Search" src="https://github.com/user-attachments/assets/e351ac71-7b3f-4597-922b-8f1e5ee1b36b" />
-)
+![Splunk Detection - Event ID 4720](images/Splunk%20Search.png)
 
-![Splunk Event Results](<img width="920" height="515" alt="Splunk Results" src="https://github.com/user-attachments/assets/8fedcb94-21f0-4056-aa88-0d5304618f7e" />)
+
+![Splunk Event Results](images/Splunk%20Results.png)
 
 
 ### Outcome
