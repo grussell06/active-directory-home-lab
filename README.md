@@ -45,7 +45,6 @@ Configure the Windows Server as a domain controller.
 ### Screenshots
 <img width="744" height="117" alt="AD DS Installed" src="https://github.com/user-attachments/assets/8ec9b637-2033-4b0b-ac8d-df45646f872f" />
 
-<img width="1023" height="774" alt="AD Users and Computers" src="https://github.com/user-attachments/assets/fc4b96ab-df81-42e5-844c-c9bf971f2b5d" />
 
 ### Active Directory
 Created the following Organizational Units: 
@@ -91,9 +90,21 @@ Created the following Security Groups:
 
 ![Members in Group](Images/Users-In-Groups.png)
 
-Desktop Wallpaper GPO
+## Group Policy Management 
 
-Configured a GPO to manage wallpapers on desktops
+To gain hands-on experience with Active Directory administration, I created and deployed Group Policy Objects (GPOs) to manage user settings across Organizational Units (OUs).
+
+### Desktop Wallpaper GPO
+
+**Objective:** Apply a standardized desktop wallpaper to users in the **IT** Organizational Unit.
+
+**Configuration:**
+- Created a new GPO named **IT - Desktop Wallpaper**.
+- Configured the **Desktop Wallpaper** policy under **User Configuration**.
+- Stored the wallpaper in a shared folder on the domain controller and referenced it using a **UNC path** (`\\DC01\Share\Wallpaper.jpg`).
+- Applied the policy using `gpupdate /force` and verified it on the client workstation.
+
+### Evidence
 
 ![GPO in Group Policy Management](Images/GPO-In-Group-Policy-Management.png)
 
@@ -101,6 +112,30 @@ Configured a GPO to manage wallpapers on desktops
 
 ![New Wallpaper](Images/new-wallpaper.png)
 
+### Control Panel Restriction
+
+**Objective:** Restrict access to the Control Panel and Windows Settings for users in the **HR** Organizational Unit.
+
+**Configuration:**
+- Created a new GPO named **HR - Disable Control Panel**.
+- Enabled the **Prohibit access to Control Panel and PC settings** policy.
+- Linked the GPO to the **HR** Organizational Unit.
+- Applied the policy setting and verified that HR users could no longer access Control Panel.
+
+### Evidence
+![Control Panel GPO](Images/HR-GPO-Setting.png)
+
+![Policy Applied](Images/Restriction-Message.png)
+
+--- 
+
+### Skills Demonstrated
+- Active Directory Group Policy Managment
+- Organizational Unit Administration
+- User-Based Policy Deployment
+- UNC File Shares
+- Group Policy Troubleshooting
+- Windows Domain Administration 
 
 ---
 
