@@ -14,8 +14,6 @@ This project documents the creation of a Windows enterprise lab using Active Dir
 - Atomic Red Team
 - VirtualBox
 
-
-
 ## Lab Architecture 
 
 ```mermaid
@@ -30,6 +28,14 @@ graph TD
   C --> G[Sysmon]
   C --> H[Splunk Universal Forwarder]
 ```
+
+The enviornment consists of four virtual machines running in a shared VirtualBox NAT Network.
+
+- Windows Server 2022 acts as the Domain Controller
+- Windows 10 is joined to the Active Directory domain.
+- Sysmon collects endpoint telemetry.
+- Splunk Enterprise receives and analyzes Windows logs.
+- Kali Linux is used to simulate attacker activity. 
 
 ## Active Directory Domain Services
 
@@ -60,7 +66,7 @@ Created the following Organizational Units:
 
 ![Organizational Units](Images/AD-Groups.png)
 
-Created user accouts:
+Created user accounts:
 - Jenny Smith (jsmith)
 - Terry Roberts (troberts)
 - Elisabeth Lowe 
@@ -77,7 +83,7 @@ Created user accouts:
 
 ![IT Users](Images/AD-IT-Users.png)
 
-Created the following Security Groups:
+Created Secuirty Groups to simplify permission management by assinging permissions to groups instead of individual users.
 
 - Finance_Users
 - HR_Users
@@ -89,6 +95,8 @@ Created the following Security Groups:
 ![Security Groups](Images/Group-OUs.png)
 
 ![Members in Group](Images/Users-In-Groups.png)
+
+---
 
 ## Group Policy Management 
 
@@ -138,6 +146,41 @@ To gain hands-on experience with Active Directory administration, I created and 
 - Windows Domain Administration 
 
 ---
+
+## Shared Folders & Permissions
+
+### Objectives
+
+Configure department specific file shares and implement role-based access control (RBAC) using Active Directory security groups.
+
+### Configuration
+
+- Created shared folders for each department
+- Configured SMB shares on the domain controller
+- Assigned Share and NFTS permissions using department-specific security groups.
+- Verified that users could access only the resources assigned to their department.
+
+### Evidence
+
+![Shared Folders](Images/Shared-Folders.png)
+
+![Permissions](Images/Permissions.png)
+
+![Successful HR Access](Images/Successful-HR-access.png)
+
+![Access Denied](Images/Access-Denied.png)
+
+### Skills Demonstrated
+
+- Windows File Sharing
+- NTFS Permissions
+- SMB Shares
+- Active Directory Security Groups
+- Role-based Access Control (RBAC)
+- Permission Troubleshooting
+
+--- 
+
 
 # Attack Simulations
 
